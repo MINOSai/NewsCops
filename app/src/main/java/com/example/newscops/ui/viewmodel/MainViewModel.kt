@@ -9,8 +9,6 @@ import javax.inject.Inject
 
 class MainViewModel @Inject constructor(val repo: NewsRepo) : ViewModel() {
 
-//    var articles: LiveData<PagedList<ArticleModel>> = repo.getArticles()
-
     fun getArticles() = repo.getArticles()
 
     fun refreshHeadlines() = repo.refreshHeadlines()

@@ -8,11 +8,23 @@
         android:name="com.example.newscops.ui.fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-        <action android:id="@+id/action_homeFragment_to_searchFragment" app:destination="@id/searchFragment"/>
+        <action
+                android:id="@+id/action_homeFragment_to_searchFragment"
+                app:destination="@id/searchFragment"
+                app:enterAnim="@anim/slide_in_left"
+                app:exitAnim="@anim/slide_out_right"
+                app:popEnterAnim="@anim/slide_in_right"
+                app:popExitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment android:id="@+id/searchFragment" android:name="com.example.newscops.ui.fragment.SearchFragment"
               android:label="fragment_search" tools:layout="@layout/fragment_search">
-        <action android:id="@+id/action_searchFragment_to_sourceFragment" app:destination="@id/sourceFragment"/>
+        <action
+                android:id="@+id/action_searchFragment_to_sourceFragment"
+                app:destination="@id/sourceFragment"
+                app:enterAnim="@anim/slide_in_left"
+                app:exitAnim="@anim/slide_out_right"
+                app:popEnterAnim="@anim/slide_in_right"
+                app:popExitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment android:id="@+id/sourceFragment" android:name="com.example.newscops.ui.fragment.SourceFragment"
               android:label="fragment_source" tools:layout="@layout/fragment_source"/>

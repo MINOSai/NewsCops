@@ -23,7 +23,6 @@ import com.example.newscops.util.openUrl
 import com.example.newscops.util.show
 import kotlinx.android.synthetic.main.fragment_search.*
 import org.jetbrains.anko.bundleOf
-import org.jetbrains.anko.toast
 import javax.inject.Inject
 
 
@@ -40,7 +39,6 @@ class SearchFragment : Fragment(), Injectable {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
@@ -62,13 +60,10 @@ class SearchFragment : Fragment(), Injectable {
 
         search_input_query.doOnTextChanged { text, start, count, after ->
             if (text.isNullOrEmpty()) {
-                context?.toast("empty")
                 search_layout_sources.show()
                 search_button_clear.hide()
                 rv_results.hide()
             } else {
-
-                context?.toast(text.toString())
 
                 searchViewModel.populateSearchResults(text.toString())
 
